@@ -2,10 +2,10 @@
  * Setup User Interface 
  * Specifically, so that we can handle user input via stdin
  */
-let connect;
+let connection;
 
 const setupInput = function(conn) {
-  connect = conn;
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
@@ -19,17 +19,17 @@ const handleUserInput = (key) => {
     process.exit();
   } if (key === 'w') {
     console.log('Up!');
-    connect.write('Move: up');
+    connection.write('Move: up');
   } if (key === 'd') {
     console.log('right!')
-    connect.write('Move: right');
+    connection.write('Move: right');
   } if (key === 'a') {
     console.log('left');
-    connect.write('Move: left');
+    connection.write('Move: left');
   } if (key === 's') {
     console.log('down');
-    connect.write('Move: down');
-  }
+    connection.write('Move: down');
+  } connection.write('Say: HELLO')
   //setup if key = w, write a comment up.
   //send move commands/directions
 };
