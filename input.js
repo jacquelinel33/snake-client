@@ -29,7 +29,9 @@ const handleUserInput = (key) => {
   } if (key === 's') {
     console.log('down');
     connection.write('Move: down');
-  } connection.write('Say: HELLO')
+  } if (key === 'h') {
+    connection.write(`Say: Wow!`);
+  }
   //setup if key = w, write a comment up.
   //send move commands/directions
 };
