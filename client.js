@@ -13,6 +13,9 @@ const connect = function () {
   conn.on('connect', () => {
     console.log('Successfully connected to game server!');
     conn.write('Name: JL');
+    // setTimeout(() => {
+    //   conn.write('Move: left');
+    // }, 50)
   });
   //On incoming data, it will console.log to player
   conn.on('data', (data) => {
