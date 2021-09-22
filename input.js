@@ -5,15 +5,19 @@
 let connection;
 
 //stdin object allows us to listen for keyboard input and react to it
+//process.stdin - built into node library that listens for user input
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
   stdin.resume();
+  //handle user input
   stdin.on('data', handleUserInput);
   return stdin;
 };
+
+
 
 const handleUserInput = (key) => {
   if (key === '\u0003') {
