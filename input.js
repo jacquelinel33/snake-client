@@ -4,6 +4,7 @@
  */
 let connection;
 
+//stdin object allows us to listen for keyboard input and react to it
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;

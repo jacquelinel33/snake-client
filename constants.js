@@ -5,3 +5,5 @@ module.exports = {
   IP,
   PORT
 };
+
+//can also add key mapping messages, key movements, player name initions to this file as well
